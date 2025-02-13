@@ -32,7 +32,7 @@ const ToDoForm = () => {
         onChange={(e) => setNewTask(e.target.value)}
       />
       <button className='ml-2 p-2 bg-blue-500 text-white rounded-full cursor-pointer hover:bg-blue-400' type='submit'>
-        <AddIcon fontSize="medium" />
+        <AddIcon fontSize="medium"  />
       </button>
     </form>
   )
