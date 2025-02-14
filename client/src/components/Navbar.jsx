@@ -18,7 +18,7 @@ const Navbar = () => {
 
       {/* Navigation menu */}
       <nav
-        className={`fixed top-0 left-0 h-full bg-gray-900 text-white w-60 p-5 transform ${
+        className={`fixed top-0 left-0 h-full bg-gray-900 text-white w-50 p-5 transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0 transition-transform duration-300 ease-in-out z-10`}
       >
@@ -38,7 +38,7 @@ const Navbar = () => {
           {['Home', 'Tasks', 'Completed', 'Personal', 'Work'].map((item) => (
             <li
               key={item}
-              className={`cursor-pointer p-3 rounded-lg ${
+              className={`cursor-pointer p-2 rounded-lg ${
                 active === item ? 'bg-gray-700' : 'hover:bg-gray-200 hover:text-black'
               }`}
               onClick={() => setActive(item)}

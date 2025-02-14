@@ -76,7 +76,7 @@ const ToDoList = () => {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <div className="md:ml-64 p-5 flex flex-col items-center md:items-start">
+    <div className="md:ml-55 p-5 flex flex-col items-center md:items-start">
       <h1 className="text-2xl text-gray-500 font-bold mb-3 md:text-left text-center">
         {greeting} User
       </h1>
@@ -90,7 +90,7 @@ const ToDoList = () => {
           {todos.map((todo) => (
             <li
               key={todo.id}
-              className="flex justify-between items-center p-3 rounded-lg"
+              className="flex justify-between items-center p-3 rounded-lg drop-shadow-lg bg-white"
             >
               <div className="flex items-center">
                 <input
@@ -120,14 +120,14 @@ const ToDoList = () => {
               <div>
                 {editingId === todo.id ? (
                   <button
-                    className="p-2 rounded-full cursor-pointer mr-2"
+                    className="cursor-pointer mr-2"
                     onClick={() => handleUpdateTask(todo.id)}
                   >
                     <SaveIcon />
                   </button>
                 ) : (
                   <button
-                    className="p-2 rounded-full cursor-pointer mr-2"
+                    className="cursor-pointer mr-2"
                     onClick={() => {
                       setEditingId(todo.id);
                       setNewTitle(todo.task);
