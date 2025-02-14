@@ -11,7 +11,7 @@ const ToDoForm = () => {
     mutationFn: createTodo,
     onSuccess: () => {
       queryClient.invalidateQueries(["todos"]);
-      setTask("")
+      setNewTask("")
     }
   })
 
@@ -25,13 +25,13 @@ const ToDoForm = () => {
   return (
     <form className='w-full mb-5' onSubmit={handleSubmit}>
       <input 
-        className='border p-2 w-1/2 rounded-lg'
+        className='border p-2 w-1/2 rounded-md'
         type='text'
         placeholder='Add a task'
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
       />
-      <button className='ml-2 p-2 bg-blue-500 text-white rounded-full cursor-pointer hover:bg-blue-400' type='submit'>
+      <button className='ml-2 p-2 bg-blue-500 text-white rounded-full cursor-pointer' type='submit'>
         <AddIcon fontSize="medium"  />
       </button>
     </form>

@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 let todos = [
-  { id: 1, task: 'Learn Node.js', completed: false },
-  { id: 2, task: 'Build a REST API', completed: true },
+  { id: 1, task: 'Go for a walk', completed: false },
+  { id: 2, task: 'Get 8 hours sleep', completed: false },
 ];
 
 let nextId = 3;

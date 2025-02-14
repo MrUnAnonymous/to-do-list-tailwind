@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
 
 const Navbar = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState('Home');
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -23,14 +22,8 @@ const Navbar = () => {
         } md:translate-x-0 transition-transform duration-300 ease-in-out z-10`}
       >
         {/* Close button positioned below the title */}
-        <div className='flex justify-between items-center mb-5'>
+        <div className='flex justify-between items-center mb-5 max-md:mt-8'>
           <h1 className='text-xl font-bold'>To do App</h1>
-          <button
-            className='p-2 md:hidden'
-            onClick={() => setIsOpen(false)}
-          >
-            <CloseIcon />
-          </button>
         </div>
 
         {/* Navigation links */}
@@ -38,8 +31,8 @@ const Navbar = () => {
           {['Home', 'Tasks', 'Completed', 'Personal', 'Work'].map((item) => (
             <li
               key={item}
-              className={`cursor-pointer p-2 rounded-lg ${
-                active === item ? 'bg-gray-700' : 'hover:bg-gray-200 hover:text-black'
+              className={`cursor-pointer p-2 rounded-md ${
+                active === item ? 'bg-gray-600' : 'hover:bg-gray-200 hover:text-black'
               }`}
               onClick={() => setActive(item)}
             >

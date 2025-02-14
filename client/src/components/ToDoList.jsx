@@ -5,18 +5,14 @@ import ToDoForm from "./ToDoForm";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import SaveIcon from '@mui/icons-material/Save';
+import moment from 'moment';
 
 const ToDoList = () => {
   const queryClient = useQueryClient(); 
   const [editingId, setEditingId] = useState(null);
   const [newTitle, setNewTitle] = useState("");
 
-  const today = new Date().toLocaleDateString("en-GB", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const today = moment().format('MMMM Do YYYY');
 
   const hour = new Date().getHours();
   let greeting = "";
@@ -92,6 +88,7 @@ const ToDoList = () => {
               key={todo.id}
               className="flex justify-between items-center p-3 rounded-lg drop-shadow-lg bg-white"
             >
+              
               <div className="flex items-center">
                 <input
                   type="checkbox"
